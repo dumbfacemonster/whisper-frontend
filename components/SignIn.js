@@ -1,6 +1,6 @@
 import styles from '../styles/SignIn.module.css';
-import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { login } from '../reducers/user';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -26,7 +26,7 @@ const handleClick = () => {
     .then(resp => resp.json())
     .then(data => {
         if (data.result) {
-            dispatch(login(data.token));
+            dispatch(login(data.user));
             setUsername('');
             setPassword('');
             router.push('/home');

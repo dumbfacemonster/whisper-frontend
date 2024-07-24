@@ -51,13 +51,14 @@
     margin: 5px;
 }
 
-.signInBtn {
+.signUpBtn {
     font-family: 'Mont-Heavy';
     font-size: 13px;
     width: 40%;
     height: 4vh;
     border-radius: 20px;
     border: none;
+    cursor: pointer;
 }
 
 .closeIcon {

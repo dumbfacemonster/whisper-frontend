@@ -32,7 +32,7 @@ const handleClick = () => {
     .then(resp => resp.json())
     .then(data => {
         if (data.result) {
-            dispatch(login(data.token));
+            dispatch(login(data.user));
             setFirstname('');
             setUsername('');
             setPassword('');
@@ -57,7 +57,7 @@ const handleClick = () => {
         <input type="text" placeholder='Firstname' onChange={(e) => setFirstname(e.target.value)} value={firstname} />
         <input type="text" placeholder='Username' onChange={(e) => setUsername(e.target.value)} value={username} />
         <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} value={password} />
-        <button className={styles.signInBtn} onClick={() => handleClick()}>Sign Up</button>
+        <button className={styles.signUpBtn} onClick={() => handleClick()}>Sign Up</button>
         {errorMessage.length > 0 ? <div className={styles.error} >{errorMessage}</div> : ''}
         </div>
         </div>
