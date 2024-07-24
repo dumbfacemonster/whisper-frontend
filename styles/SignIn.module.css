@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'Mont-Heavy';
+    src: url('../fonts/mont-heavy.ttf') format('truetype');
+  }
+
+.modal {
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    position:fixed;
+    top: 0;
+    left: 0;
+    padding-top: 100px;
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modalBox {
+    position: relative;
+    font-family: 'Mont-Heavy';
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #151F2B;
+    margin: auto;
+    width: 40%;
+    height: 55%;
+    border-radius: 10px;
+}
+
+.modalBox input {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 2%;
+    height: 5vh;
+    width: 40%;
+    background-color: #151F2B;
+    border: 1px #59626F solid;
+    border-radius: 4px;
+    color: white;
+}
+
+.modalBox input:focus, .modalBox input:active {
+    outline: none;
+    color: white;
+}
+
+.modalTitle {
+    margin: 5px;
+}
+
+.signInBtn {
+    font-family: 'Mont-Heavy';
+    font-size: 13px;
+    width: 40%;
+    height: 4vh;
+    border-radius: 20px;
+    border: none;
+}
+
+.closeIcon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    height: 20px;
+}
+
+.icon {
+    transform: rotate(180deg);
+    height: 50px;
+}
+
+.error {
+    font-size: 12px;
+}

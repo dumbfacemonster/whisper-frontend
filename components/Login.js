@@ -2,19 +2,24 @@ import styles from '../styles/Login.module.css';
 import { useState } from 'react';
 import SignUp from './SignUp';
 import SignIn from './SignIn';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 function Login() {
 
 const [signUpOpen, setSignUpOpen] = useState(false);
 const [signInOpen, setSignInOpen] = useState(false);
 
+console.log(signInOpen)
+
   return (
-    <div>
+    <div className={styles.loginPage}>
       <div className={styles.imgContainer}>
-        <img src="login-img.png" alt="Twitter image" />
+        <img className={styles.image} src="login-img.png" alt="Twitter image" />
       </div>
       <div className={styles.loginContainer}>
-        <h1 className={styles.title}>See what's happening</h1>
+        <FontAwesomeIcon icon={faTwitter} className={styles.icon} />
+        <h1 className={styles.title}>See what's<br />happening</h1>
         <h2 className={styles.secondTitle}>Join Twitter today.</h2>
         <button className={styles.signUp} onClick={() => setSignUpOpen(!signUpOpen)}>Sign Up</button>
         <p className={styles.text}>Already have an account ?</p>

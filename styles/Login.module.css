@@ -2,3 +2,84 @@
     font-family: 'Mont-Heavy';
     src: url('../fonts/mont-heavy.ttf') format('truetype');
   }
+
+
+  .loginPage {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .imgContainer {
+    height: 100vh;
+    max-width: 40vw;
+    min-width: 320px;
+  }
+
+  .imgContainer img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: rotate(180deg);
+  }
+
+  .loginContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3vw;
+    height: 100vh;
+    width: 60vw;
+    background-color: #151F2B;
+    color: white;
+  }
+
+  .title {
+    font-family: 'Mont-Heavy';
+    font-size: 80px;
+    padding: 15px 0px;
+    margin: 0;
+  }
+
+  .secondTitle {
+    font-family: 'Mont-Heavy';
+    font-size: 30px;
+  }
+
+  .text {
+    font-family: 'Mont-Heavy';
+    font-size: 12px;
+  }
+
+  .signUp {
+    margin: 5px 0px;
+    font-family: 'Mont-Heavy';
+    width: 15vw;
+    height: 5vh;
+    border-radius: 20px;
+    background-color: #3E9AF1;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .signIn {
+    margin: 5px 0px;
+    font-family: 'Mont-Heavy';
+    width: 15vw;
+    height: 5vh;
+    border-radius: 20px;
+    background-color: #151F2B;
+    border: 1px solid #59626F;
+    color: #3E9AF1;
+    cursor: pointer;
+  }
+
+  .icon {
+    height: 50px;
+    position: absolute;
+    top: 5vh;
+    left: 43vw;
+    transform: rotate(180deg);
+  }
