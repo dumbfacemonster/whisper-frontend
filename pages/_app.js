@@ -14,7 +14,7 @@ function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <Head>
-        <title>Twitter</title>
+        <title>Whisper</title>
       </Head>
       <Component {...pageProps} />
     </Provider>

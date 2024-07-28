@@ -49,7 +49,7 @@ const handleClick = () => {
         </h4>
         <input type="text" placeholder='Username' onChange={(e) => setUsername(e.target.value)} value={username} />
         <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} value={password} />
-        <button className={styles.signInBtn} onClick={() => handleClick()}>Sign in</button>
+        <button className={styles.signInBtn} onClick={() => handleClick()} >Sign in</button>
         {errorMessage.length > 0 ? <div className={styles.error} >{errorMessage}</div> : ''}
             </div>
         </div>

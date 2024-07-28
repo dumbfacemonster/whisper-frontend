@@ -145,7 +145,6 @@
 }
 
 .underInput {
-  border: 1px solid green;
   color: #59626F;
   align-self: flex-end;
   display: flex;
@@ -177,7 +176,14 @@
   margin: 0 1vw;
 }
 
+.lastTweets {
+  display: flex;
+  flex-direction: column;
+  background-color: #151F2B;
+}
+
 .rightContainer {
+  padding: 1vh 2vw;
   border-left: 1px solid #59626F;
   position: fixed;
   left: 70vw;
@@ -187,11 +193,6 @@
   height: 100%;
 }
 
-.lastTweets {
-  display: flex;
-  flex-direction: column;
-  background-color: #151F2B;
-}
 
 .ScrollToTop {
   background-color: #151F2B !important;

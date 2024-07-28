@@ -9,6 +9,7 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import LastTweets from './LastTweets';
+import Trends from './Trends';
 import ScrollToTop from 'react-scroll-to-top';
 
 function Home() {
@@ -16,6 +17,7 @@ function Home() {
   const router = useRouter();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value);
+  const tweets = useSelector((state) => state.tweets.value);
 
   const [newTweet, setNewTweet] = useState('');
   const [errorMessage, setErrorMessage] = useState(false);
@@ -54,6 +56,8 @@ function Home() {
       setNewTweet('');
     }
   }
+
+
 
 
   return (
@@ -97,10 +101,14 @@ function Home() {
       </div>
       <div className={styles.rightContainer}>
         <h3 className={styles.title}>Trends</h3>
+        <div className={styles.allTrendsBox}>
+          <Trends />
+        </div>
       </div>
       <ScrollToTop smooth={true} color="#ffffff" className={styles.ScrollToTop} />
     </div>
   );
 }
+
 
 export default Home;

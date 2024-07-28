@@ -17,7 +17,7 @@ useEffect(() => {
     fetch('http://localhost:3000/tweets')
     .then(resp => resp.json())
     .then(data => {
-        console.log(data)
+        //console.log(data)
         data.result === true ? dispatch(getAllTweets(data.tweets)) : console.log('Error getting tweets from DB');
     })
 }, [])
@@ -57,7 +57,7 @@ const updateLikes = (tweetId) => {
 }
 
 const tweets = useSelector((state) => state.tweets.value);
-console.log(tweets)
+//console.log(tweets)
 
 const allTweets = tweets.map((data, i) => {
 
