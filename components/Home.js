@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../reducers/user';
 import { addTweet, removeTweet } from '../reducers/tweets';
@@ -25,9 +25,16 @@ function Home() {
     router.push('/')
   }
 
+  useEffect(() => {
+    if (!user.token) {
+      router.push('/');
+    }
+  }, [])
+
   const handleTweet = () => {
-    if (newTweet.length < 1) {
+    if (newTweet.length < 1 || !user.token) {
       setErrorMessage(true);
+      return;
     }
     else {
       const sendTweet = {
@@ -76,6 +83,9 @@ function Home() {
           <div className={styles.newTweetBox}>
             <textarea rows="3" onChange={(e) => setNewTweet(e.target.value)} value={newTweet} maxLength={280} className={styles.tweetInput} placeholder="What's up ?" />
             <div className={styles.underInput}>
+              {errorMessage === true ? (
+                <p className={styles.errorMessage}>Can't whisp in these conditions !</p>
+              ) : null}
               <p className={styles.counter}>{newTweet.length}/280</p>
               <button onClick={() => handleTweet()} className={styles.newTweet}>Tweet</button>
             </div>

@@ -16,6 +16,11 @@ const handleTrash = () => {
     props.handleTrash(props.id)
 }
 
+const updateLikes = () => {
+    props.updateLikes(props.id)
+    console.log(props.id)
+}
+
 const time = moment(props.date).fromNow();
 
 const trashIcon = {
@@ -44,7 +49,7 @@ let heartIcon = { 'cursor' : 'pointer' , 'color' : 'white'}
         </div>
         <div className={styles.content}>{props.content}</div>
         <div className={styles.icons}>
-            <FontAwesomeIcon style={heartIcon} icon={faHeart} />
+            <FontAwesomeIcon onClick={() => updateLikes()} style={heartIcon} icon={faHeart} />
             {props.author === user.token ? (
             <FontAwesomeIcon style={trashIcon} onClick ={() => handleTrash()} icon={faTrashCan} />
             ) : null }
