@@ -1,0 +1,50 @@
+.tweetContainer {
+    border: 1px solid magenta;
+    border-top: 1px solid #59626F;
+    padding: 2vh 2vw;
+}
+
+.authorInfos {
+    border: solid 1px goldenrod;
+    width: 100%;
+    height: 60px;
+    display: flex;
+}
+
+.profilePic {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+.authorName {
+    font-family: 'Mont-Heavy';
+    color: white;
+    margin-left: 1vw;
+}
+
+.username {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #59626F;
+    font-size: 14px;
+}
+
+.point {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #59626F;
+    font-size: 14px;
+}
+
+.date {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #59626F;
+    font-size: 14px;
+}
+
+.content {
+    padding: 1vh 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    font-size: 16px;
+}

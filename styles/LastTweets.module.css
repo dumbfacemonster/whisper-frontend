@@ -1,0 +1,4 @@
+.tweetsContainer {
+    display: flex;
+    flex-direction: column;
+}

@@ -14,13 +14,15 @@
 }
 
 .leftContainer {
-  border: solid 1px red;
-  padding: 2vh 3vw 5vh 3vw;
+  border-right: 1px solid #59626F;
+  padding: 1vh 3vw 5vh 3vw;
   height: 100%;
-  width: 25%;
+  width: 25vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: fixed;
+  background-color: #151F2B;
 }
 
 .icon {
@@ -28,7 +30,7 @@
   color: white;
   height: 50px;
   position: absolute;
-  top: 5vh;
+  top: 4vh;
   left: 3vw;
   cursor: pointer;
 }
@@ -78,4 +80,107 @@
   border-radius: 20px;
   margin-top: 20px;
   cursor: pointer;
+}
+
+.middleContainer {
+  padding-left: 25vw;
+  width: 70vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #151F2B;
+}
+
+.topMiddle {
+  min-height: 25vh;
+  max-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.home {
+  padding: 1vh 2vw;
+  backdrop-filter: blur(10px);
+  width: 45%;
+  height: 10vh;
+  position: fixed;
+  box-sizing: border-box;
+  border-bottom: solid 1px #59626F;
+}
+
+.title {
+  align-self: flex-start;
+  color: white;
+}
+
+.newTweetBox {
+  padding-top: 12vh;
+  width: 90%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.tweetInput, .tweetInput:focus, .tweetInput:active {
+  width: 100%;
+  background-color: #151F2B;
+  color: white;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #59626F;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  resize: none;
+}
+
+.tweetInput::placeholder {
+  color: #59626F;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.underInput {
+  color: #59626F;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 37%;
+}
+
+.newTweet {
+  font-family: 'Mont-Heavy';
+  width: 8vw;
+  padding: 5px 0px;
+  background-color: #3E9AF1;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.rightContainer {
+  border-left: 1px solid #59626F;
+  position: fixed;
+  left: 70vw;
+  color: white;
+  background-color: #151F2B;
+  width: 30vw;
+  height: 100%;
+}
+
+.lastTweets {
+  display: flex;
+  flex-direction: column;
+  background-color: #151F2B;
+}
+
+.ScrollToTop {
+  background-color: #151F2B !important;
+  box-shadow: none !important;
+  border: 1px solid #59626F !important;
 }
