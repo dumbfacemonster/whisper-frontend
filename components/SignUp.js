@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faGhost } from '@fortawesome/free-solid-svg-icons';
 
-function SignIn(props) {
+function SignUp(props) {
 
 const dispatch = useDispatch();
 const router = useRouter();
@@ -30,8 +30,10 @@ const handleClick = () => {
     })
     .then(resp => resp.json())
     .then(data => {
+        console.log(data)
         if (data.result) {
-            dispatch(login(data.user));
+            //console.log(data.user)
+            dispatch(login(data.newUser));
             setFirstname('');
             setUsername('');
             setPassword('');
@@ -66,4 +68,4 @@ const handleClick = () => {
     );
 }
 
-export default SignIn;
+export default SignUp;

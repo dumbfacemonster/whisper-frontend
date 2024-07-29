@@ -7,6 +7,7 @@ import { faHeart, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import {removeTweet} from '../reducers/tweets';
 import {login, logout} from '../reducers/user'
 const moment = require('moment');
+import Image from 'next/image';
 
 function Tweet(props) {
 
@@ -56,7 +57,7 @@ const formattedContent = props.content.split(" ").map((word, i) => {
         <div className={styles.tweetContainer}>
             <div className={styles.tweetBack}>
         <div className={styles.authorInfos}>
-            <img className={styles.profilePic} src='profile-pic.png' alt="Profile picture" />
+        <Image src="/profile-pic.png" alt="Avatar" width={60} height={60} className={styles.profilePic} />
             <p>
             <span className={styles.authorName}>{props.firstname} </span>
             <span className={styles.username}>@{props.username} </span>

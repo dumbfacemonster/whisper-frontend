@@ -9,6 +9,7 @@ import Link from 'next/link';
 import Trends from './Trends';
 import Tweet from './Tweet';
 
+
 function Hashtag() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value);
@@ -39,10 +40,12 @@ function Hashtag() {
   }, [hashtag]);
 
   const handleSubmit = () => {
-    console.log(query)
     if (query.length > 1) {
       router.push(`/hashtag/${query}`);
       hashtag = query
+    }
+    else {
+      setQuery('Invalid search')
     }
   };
 
@@ -52,20 +55,20 @@ function Hashtag() {
   console.log(tweets)
 
   return (
-    <div className={styles.container}>
-      <div className={styles.leftSection}>
+    <div className={styles.hashtagPage}>
+      <div className={styles.leftContainer}>
         <div>
           <Link href="/">
-            <FontAwesomeIcon icon={faGhost} className={styles.ghost} />
+            <FontAwesomeIcon icon={faGhost} className={styles.icon} />
           </Link>
         </div>
         <div>
           <div className={styles.userSection}>
             <div>
-              <img src='profile-pic.png' className={styles.profilePic} alt='Profile picture' />
+              <img src='../profile-pic.png' className={styles.profilePic} alt='Profile picture' />
             </div>
             <div className={styles.userInfo}>
-              <p className={styles.name}>{user.firstName}</p>
+              <p className={styles.firstname}>{user.firstname}</p>
               <p className={styles.username}>@{user.username}</p>
             </div>
           </div>
@@ -73,9 +76,12 @@ function Hashtag() {
         </div>
       </div>
 
-      <div className={styles.middleSection}>
-        <h2 className={styles.title}>Hashtag</h2>
-        <div>
+      <div className={styles.middleContainer}>
+        <div className={styles.topMiddle}>
+        <div className={styles.home}>
+            <h3 className={styles.title}>Hashtags</h3>
+          </div>
+        
           <div className={styles.searchSection}>
             <input
               type="text"
@@ -83,13 +89,12 @@ function Hashtag() {
               onKeyUp={(e) => e.key === 'Enter' && handleSubmit()}
               value={query}
               className={styles.searchBar}
+              placeholder='#'
             />
+            </div>
           </div>
           { tweets.length >=1 ? ( <div> {tweets} </div> ) : (<p className={styles.noTweet}>No tweets found with #{hashtag}</p>)}
-          {/* {tweets.length === 0 && <p className={styles.noTweet}>No tweets found with #{hashtag}</p>}
-          {tweets} */}
         </div>
-      </div>
 
       <div className={styles.rightSection}>
         <h2 className={styles.title}>Trends</h2>

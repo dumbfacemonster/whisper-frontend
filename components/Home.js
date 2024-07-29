@@ -39,10 +39,34 @@ function Home() {
       return;
     }
     else {
+      const pattern = /#[A-z0-9]*/gi
+      const hashtag = newTweet.match(pattern);
+      /* console.log(hashtag) */
+      
+      let saveHashtag;
+      const arrHash = []
+      
+      if (!hashtag) {
+          saveHashtag = [];
+      }
+      else {
+          saveHashtag = hashtag;
+      
+          for (let tag of saveHashtag) {
+              let newTag = tag.slice(1);
+              arrHash.push(newTag.toLowerCase())
+          }
+          saveHashtag = arrHash;
+          console.log(saveHashtag)
+          
+      }
+
       const sendTweet = {
         author: user.token,
         content: newTweet,
+        hashtag: saveHashtag,
       }
+      console.log(sendTweet)
       fetch('https://whisper-backend-two.vercel.app/tweets', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
