@@ -51,7 +51,7 @@ function Hashtag() {
   };
 
   const tweets = tweetsData.map((data, i) => {
-    return <Tweet key={i} {...data} />;
+    return <Tweet firstname={data.author.firstname} username={data.author.username} key={i} {...data} />;
   });
   console.log(tweets)
 
