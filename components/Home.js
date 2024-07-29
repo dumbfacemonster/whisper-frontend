@@ -54,7 +54,7 @@ function Home() {
       
           for (let tag of saveHashtag) {
               let newTag = tag.slice(1);
-              arrHash.push(newTag.toLowerCase())
+              arrHash.push(newTag)
           }
           saveHashtag = arrHash;
           console.log(saveHashtag)
