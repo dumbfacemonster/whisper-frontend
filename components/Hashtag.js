@@ -31,7 +31,7 @@ function Hashtag() {
     }
     setQuery(router.query.hashtag);
 
-    fetch(`http://localhost:3000/tweets/trend/${router.query.hashtag}`)
+    fetch(`https://whisper-backend-two.vercel.app/tweets/trend/${router.query.hashtag}`)
       .then(response => response.json())
       .then(data => {
         console.log(data)

@@ -43,7 +43,7 @@ function Home() {
         author: user.token,
         content: newTweet,
       }
-      fetch('http://localhost:3000/tweets', {
+      fetch('https://whisper-backend-two.vercel.app/tweets', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(sendTweet)

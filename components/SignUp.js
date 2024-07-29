@@ -23,7 +23,7 @@ const handleClick = () => {
         return;
     };
 
-    fetch('http://localhost:3000/users/signup', {
+    fetch('https://whisper-backend-two.vercel.app/users/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ firstname: firstname, username: username, password: password }),

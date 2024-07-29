@@ -14,7 +14,7 @@ const user = useSelector((state) => state.user.value);
 
 useEffect(() => {
     
-    fetch('http://localhost:3000/tweets')
+    fetch('https://whisper-backend-two.vercel.app/tweets')
     .then(resp => resp.json())
     .then(data => {
         //console.log(data)
@@ -23,7 +23,7 @@ useEffect(() => {
 }, [])
 
 const handleTrash = (tweetId) => {
-    fetch(`http://localhost:3000/tweets/${tweetId}`, {
+    fetch(`https://whisper-backend-two.vercel.app/tweets/${tweetId}`, {
         method: 'DELETE',
     })
     .then(resp => resp.json())
@@ -37,7 +37,7 @@ const updateLikes = (tweetId) => {
         _id: tweetId,
         token: user.token,
     };
-    fetch('http://localhost:3000/tweets/likes', {
+    fetch('https://whisper-backend-two.vercel.app/tweets/likes', {
         method: "PUT",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updateBody)

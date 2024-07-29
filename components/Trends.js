@@ -19,7 +19,7 @@ function Trends() {
     //console.log(tweets)
 
 useEffect(() => {
-    fetch('http://localhost:3000/tweets/trends')
+    fetch('https://whisper-backend-two.vercel.app/tweets/trends')
     .then(resp => resp.json())
     .then(data => {
         if(data.result){
