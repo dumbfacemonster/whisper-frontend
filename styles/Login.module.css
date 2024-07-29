@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Mont-Heavy';
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     src: url('../fonts/mont-heavy.ttf') format('truetype');
   }
 
@@ -45,25 +45,29 @@
   }
 
   .title {
-    font-family: 'Mont-Heavy';
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 900;
     font-size: 80px;
     padding: 15px 0px;
     margin: 0;
   }
 
   .secondTitle {
-    font-family: 'Mont-Heavy';
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 500;
     font-size: 30px;
   }
 
   .text {
-    font-family: 'Mont-Heavy';
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
     font-size: 12px;
   }
 
   .signUp {
     margin: 5px 0px;
-    font-family: 'Mont-Heavy';
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
     width: 15vw;
     height: 5vh;
     border-radius: 20px;
@@ -75,7 +79,8 @@
 
   .signIn {
     margin: 5px 0px;
-    font-family: 'Mont-Heavy';
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
     width: 15vw;
     height: 5vh;
     border-radius: 20px;

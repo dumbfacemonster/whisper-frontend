@@ -1,8 +1,3 @@
-@font-face {
-    font-family: 'Mont-Heavy';
-    src: url('../fonts/mont-heavy.ttf') format('truetype');
-  }
-
 .modal {
     height: 100vh;
     width: 100vw;
@@ -16,7 +11,8 @@
 
 .modalBox {
     position: relative;
-    font-family: 'Mont-Heavy';
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 500;
     color: #E0D1CC;
     font-size: 25px;
     padding: 10px;
@@ -48,7 +44,7 @@
 }
 
 .modalBox input::placeholder {
-    color: #E0D1CC;
+    color: #C1A49A;
 }
 
 .modalTitle {
@@ -56,7 +52,8 @@
 }
 
 .signInBtn {
-    font-family: 'Mont-Heavy';
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
     font-size: 13px;
     width: 40%;
     height: 4vh;

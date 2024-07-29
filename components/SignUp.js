@@ -33,7 +33,7 @@ const handleClick = () => {
         console.log(data)
         if (data.result) {
             //console.log(data.user)
-            dispatch(login(data.newUser));
+            dispatch(login(data.user));
             setFirstname('');
             setUsername('');
             setPassword('');

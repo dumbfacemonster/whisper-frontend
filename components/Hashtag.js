@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Link from 'next/link';
 import Trends from './Trends';
 import Tweet from './Tweet';
+import { logout } from '../reducers/user';
 
 
 function Hashtag() {
@@ -96,7 +97,7 @@ function Hashtag() {
           { tweets.length >=1 ? ( <div> {tweets} </div> ) : (<p className={styles.noTweet}>No tweets found with #{hashtag}</p>)}
         </div>
 
-      <div className={styles.rightSection}>
+      <div className={styles.rightContainer}>
         <h2 className={styles.title}>Trends</h2>
         <Trends />
       </div>

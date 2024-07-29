@@ -27,7 +27,8 @@
 }
 
 .hashtag {
-    font-family: 'Mont-Heavy';
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
     font-size: 16px;
     padding: 0;
     margin: 0;
@@ -36,7 +37,7 @@
 }
 
 .nbrTweet {
-    font-family: 'Mont-book';
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 400;
     font-size: 12px;
     padding: 0;

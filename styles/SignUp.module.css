@@ -16,7 +16,8 @@
 
 .modalBox {
     position: relative;
-    font-family: 'Mont-Heavy';
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 500;
     color: #E0D1CC;
     font-size: 25px;
     padding: 10px;
@@ -47,12 +48,17 @@
     color: #E0D1CC;
 }
 
+.modalBox input::placeholder {
+    color: #C1A49A;
+}
+
 .modalTitle {
     margin: 5px;
 }
 
 .signUpBtn {
-    font-family: 'Mont-Heavy';
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
     font-size: 13px;
     width: 40%;
     height: 4vh;
