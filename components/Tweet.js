@@ -28,14 +28,14 @@ const time = moment(props.date).fromNow();
 
 const trashIcon = {
     'cursor' : 'pointer',
-    'color' : 'white',
+    'color' : '#C1A49A',
 }
 
 const isLiked = props.likedBy.some((e) => e === user.token)
 
-let heartIcon = { 'cursor' : 'pointer' , 'color' : 'white'}
+let heartIcon = { 'cursor' : 'pointer' , 'color' : '#C1A49A'}
     if (isLiked === true) {
-        heartIcon = { 'cursor' : 'pointer' , 'color' : '#e74c3c'}
+        heartIcon = { 'cursor' : 'pointer' , 'color' : '#53131E'}
     }
 
 const counter = props.likedBy.length;
@@ -44,7 +44,7 @@ const counter = props.likedBy.length;
 const formattedContent = props.content.split(" ").map((word, i) => {
     if(word.startsWith('#') && word.length > 1) {
         return (
-            <span key={i} className={styles.hashtag} ><Link href={`/hashtag/${word.slice(1)}`}>{word}</Link> </span>
+            <span key={i} ><Link className={styles.hashtag} href={`/hashtag/${word.slice(1)}`}><span className={styles.linkText}>{word}</span></Link> </span>
         )
     }
     return word + ' ';
@@ -54,6 +54,7 @@ const formattedContent = props.content.split(" ").map((word, i) => {
     return (
         <>
         <div className={styles.tweetContainer}>
+            <div className={styles.tweetBack}>
         <div className={styles.authorInfos}>
             <img className={styles.profilePic} src='profile-pic.png' alt="Profile picture" />
             <p>
@@ -71,7 +72,7 @@ const formattedContent = props.content.split(" ").map((word, i) => {
             ) : null }
             </div>
         </div>
-        
+        </div>
         </>
     );
 }

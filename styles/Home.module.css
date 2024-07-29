@@ -1,10 +1,14 @@
 @font-face {
   font-family: 'Mont-Heavy';
   src: url('../fonts/mont-heavy.ttf') format('truetype');
+  font-family: 'Mont-Bold';
+  src: url('../fonts/mont-bold.ttf') format('truetype');
+  font-family: 'Mont-Book';
+  src: url('../fonts/mont-book.ttf') format('truetype');
 }
 
 .homePage {
-  background-color: #151F2B;
+  background-color: #E0D1CC;
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -14,7 +18,7 @@
 }
 
 .leftContainer {
-  border-right: 1px solid #59626F;
+  border-right: 1px solid #C1A49A;
   padding: 1vh 3vw 5vh 3vw;
   height: 100%;
   width: 25vw;
@@ -22,12 +26,12 @@
   flex-direction: column;
   justify-content: flex-end;
   position: fixed;
-  background-color: #151F2B;
+  background-color: #E0D1CC;
 }
 
 .icon {
   transform: rotate(180deg);
-  color: white;
+  color: #53131E;
   height: 50px;
   position: absolute;
   top: 4vh;
@@ -36,14 +40,12 @@
 }
 
 .userSection {
-
   display: flex;
   align-items: center;
 }
 
 .userInfo {
   padding: 0px 10px;
-
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -54,14 +56,17 @@
   padding: 0;
   margin: 0;
   font-family: 'Mont-Heavy';
-  color: white;
+  font-size: 18px;
+  color: #210203;
 }
 
 .username {
   padding: 0;
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #59626F;
+  font-weight: 100;
+  font-size: 12px;
+  color: #C1A49A;
 }
 
 .profilePic {
@@ -75,9 +80,9 @@
   font-family: 'Mont-Heavy';
   width: 35%;
   padding: 5px 0px;
-  background-color: #151F2B;
-  color: white;
-  border: solid 1px #59626F;
+  background-color: #C1A49A;
+  color: #53131E;
+  border: solid 1px #C1A49A;
   border-radius: 20px;
   margin-top: 20px;
   cursor: pointer;
@@ -89,7 +94,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #151F2B;
+  background-color: #E0D1CC;
 }
 
 .topMiddle {
@@ -109,13 +114,13 @@
   height: 10vh;
   position: fixed;
   box-sizing: border-box;
-  border-bottom: solid 1px #59626F;
+  border-bottom: solid 1px #E0D1CC;
 }
 
 .title {
   font-family: 'Mont-Heavy';
   align-self: flex-start;
-  color: white;
+  color: #53131E
 }
 
 .newTweetBox {
@@ -129,23 +134,23 @@
 
 .tweetInput, .tweetInput:focus, .tweetInput:active {
   width: 100%;
-  background-color: #151F2B;
-  color: white;
+  background-color: #E0D1CC;
+  color: #210203;
   outline: none;
   border: none;
-  border-bottom: 1px solid #59626F;
+  border-bottom: 1px solid #C1A49A;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 15px;
   resize: none;
 }
 
 .tweetInput::placeholder {
-  color: #59626F;
+  color: #210203;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .underInput {
-  color: #59626F;
+  color: #210203;
   align-self: flex-end;
   display: flex;
   flex-direction: row;
@@ -155,7 +160,7 @@
 }
 
 .errorMessage {
-  color: #59626F;
+  color: #C1A49A;
 
 }
 
@@ -163,8 +168,8 @@
   font-family: 'Mont-Heavy';
   width: 8vw;
   padding: 5px 0px;
-  background-color: #3E9AF1;
-  color: white;
+  background-color: #1B2D2A;
+  color: #C1A49A;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -179,23 +184,23 @@
 .lastTweets {
   display: flex;
   flex-direction: column;
-  background-color: #151F2B;
+  background-color: #E0D1CC;
 }
 
 .rightContainer {
   padding: 1vh 2vw;
-  border-left: 1px solid #59626F;
+  border-left: 1px solid #C1A49A;
   position: fixed;
   left: 70vw;
-  color: white;
-  background-color: #151F2B;
+  color: #E0D1CC;
+  background-color: #E0D1CC;
   width: 30vw;
   height: 100%;
 }
 
 
 .ScrollToTop {
-  background-color: #151F2B !important;
+  background-color: #1B2D2A !important;
   box-shadow: none !important;
-  border: 1px solid #59626F !important;
+  border: 1px solid #C1A49A !important;
 }

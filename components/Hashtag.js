@@ -1,34 +1,190 @@
-import styles from '../styles/Login.module.css';
-import { useState } from 'react';
-import SignUp from './SignUp';
-import SignIn from './SignIn';
+import styles from '../styles/Hashtag.module.css';
+import { useState, useEffect } from 'react';
+import { getAllTrendTweets } from '../reducers/tweets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGhost} from '@fortawesome/free-solid-svg-icons';
+import { useRouter } from 'next/router';
+import { useSelector, useDispatch } from 'react-redux';
+import Link from 'next/link';
+import Trends from './Trends';
+import Tweet from './Tweet';
 
 function Hashtag() {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.value);
+  const tweetsData = useSelector((state) => state.tweets.value);
 
-const [signUpOpen, setSignUpOpen] = useState(false);
-const [signInOpen, setSignInOpen] = useState(false);
+  // Redirect to / if not logged in
+  const router = useRouter();
+  //const { hashtag } = router.query;
+  //const [hashtag, setHashtag] = useState('')
+  const { hashtag } = router.query;
+  if (!user.token) {
+    router.push('/');
+  }
+  console.log(router.query.hashtag)
+  const [query, setQuery] = useState('');
 
-console.log(signInOpen)
+  useEffect(() => {
+    if (!hashtag) {
+      return;
+    }
+    setQuery(router.query.hashtag);
+
+    fetch(`http://localhost:3000/tweets/trend/${router.query.hashtag}`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        dispatch(getAllTrendTweets(data.tweets))})
+  }, [hashtag]);
+
+  const handleSubmit = () => {
+    console.log(query)
+    if (query.length > 1) {
+      router.push(`/hashtag/${query}`);
+      hashtag = query
+    }
+  };
+
+  const tweets = tweetsData.map((data, i) => {
+    return <Tweet key={i} {...data} />;
+  });
+  console.log(tweets)
 
   return (
-    <div className={styles.loginPage}>
-      <div className={styles.imgContainer}>
-        <img className={styles.image} src="login-img.png" alt="Twitter image" />
+    <div className={styles.container}>
+      <div className={styles.leftSection}>
+        <div>
+          <Link href="/">
+            <FontAwesomeIcon icon={faGhost} className={styles.ghost} />
+          </Link>
+        </div>
+        <div>
+          <div className={styles.userSection}>
+            <div>
+              <img src='profile-pic.png' className={styles.profilePic} alt='Profile picture' />
+            </div>
+            <div className={styles.userInfo}>
+              <p className={styles.name}>{user.firstName}</p>
+              <p className={styles.username}>@{user.username}</p>
+            </div>
+          </div>
+          <button onClick={() => { router.push('/'); dispatch(logout()); }} className={styles.logout}>Logout</button>
+        </div>
       </div>
-      <div className={styles.loginContainer}>
-        <FontAwesomeIcon icon={faTwitter} className={styles.icon} />
-        <h1 className={styles.title}>See what's<br />happening</h1>
-        <h2 className={styles.secondTitle}>Join Twitter today.</h2>
-        <button className={styles.signUp} onClick={() => setSignUpOpen(!signUpOpen)}>Sign Up</button>
-        <p className={styles.text}>Already have an account ?</p>
-        <button className={styles.signIn} onClick={() => setSignInOpen(!signInOpen)}>Sign in</button>
+
+      <div className={styles.middleSection}>
+        <h2 className={styles.title}>Hashtag</h2>
+        <div>
+          <div className={styles.searchSection}>
+            <input
+              type="text"
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyUp={(e) => e.key === 'Enter' && handleSubmit()}
+              value={query}
+              className={styles.searchBar}
+            />
+          </div>
+          { tweets.length >=1 ? ( <div> {tweets} </div> ) : (<p className={styles.noTweet}>No tweets found with #{hashtag}</p>)}
+          {/* {tweets.length === 0 && <p className={styles.noTweet}>No tweets found with #{hashtag}</p>}
+          {tweets} */}
+        </div>
       </div>
-        <SignIn isOpen={signInOpen} onClose={() => setSignInOpen(!signInOpen)} />
-        <SignUp isOpen={signUpOpen} onClose={() => setSignUpOpen(!signUpOpen)} />
+
+      <div className={styles.rightSection}>
+        <h2 className={styles.title}>Trends</h2>
+        <Trends />
+      </div>
     </div>
   );
-}
+
+/*   const user = useSelector((state) => state.user.value);
+  const tweetsData = useSelector((state) => state.tweets.value);
+  const [tagged, setTagged] = useState([]);
+
+  const router = useRouter();
+  const { hashtag } = router.query;
+  if (!user.token) {
+    router.push('/');
+  };
+  const [query, setQuery] = useState('#');
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!hashtag) {
+      return;
+    }
+
+    setQuery('#' + hashtag);
+    console.log(query)
+
+
+fetch(`http://localhost:3000/tweets/trends/${query}`)
+      .then(response => response.json())
+      .then(data => {
+        data.result && dispatch(getAllTrendTweets(data.tweets));
+      });
+      setTagged(tweetsData)
+  }, [hashtag]);
+
+  const handleSubmit = () => {
+    if (query.length > 1) {
+      router.push(`/hashtag/${query.slice(1)}`);
+    }
+  };
+
+  console.log(tagged)
+ 
+
+  const tweets = tagged.map((data, i) => {
+    return <Tweet key={i} {...data} />;
+  });
+  
+
+  return (
+    <div className={styles.hashtagPage}>
+      <div className={styles.leftContainer}>
+          <Link href="/">
+          <FontAwesomeIcon icon={faGhost} className={styles.icon} />
+          </Link>
+        <div>
+          <div className={styles.userSection}>
+            <div>
+            <img src='profile-pic.png' className={styles.profilePic} alt='Profile picture' />
+            </div>
+            <div className={styles.userInfo}>
+              <p className={styles.firstname}>{user.firstName}</p>
+              <p className={styles.username}>@{user.username}</p>
+            </div>
+          </div>
+          <button onClick={() => { router.push('/'); dispatch(logout()); }} className={styles.logout}>Logout</button>
+        </div>
+      </div>
+
+      <div className={styles.middleContainer}>
+        <h2 className={styles.title}>Hashtag</h2>
+        <div>
+          <div className={styles.search}>
+            <input
+              type="text"
+              onChange={(e) => setQuery('#' + e.target.value.replace(/^#/, ''))}
+              onKeyUp={(e) => e.key === 'Enter' && handleSubmit()}
+              value={query}
+              className={styles.searchBar}
+            />
+          </div>
+         {/*  {tweetsData.length === 0 && <p className={styles.noTweet}>No tweets found with #{hashtag}</p>} }
+          {tweets}
+        </div>
+      </div>
+
+      <div className={styles.rightContainer}>
+        <h2 className={styles.title}>Trends</h2>
+        <Trends />
+      </div>
+    </div>
+  );*/
+} 
+
 
 export default Hashtag;

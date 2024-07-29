@@ -12,6 +12,9 @@ export const tweetsSlice = createSlice({
     getAllTweets: (state, action) => {
         state.value = action.payload;
     },
+    getAllTrendTweets: (state, action) => {
+      state.value = action.payload;
+    },
    addTweet: (state, action) => {
      state.value = [action.payload, ...state.value];
    },
@@ -35,5 +38,5 @@ export const tweetsSlice = createSlice({
  },
 });
 
-export const { addTweet, removeTweet, getAllTweets, addLike, removeLike } = tweetsSlice.actions;
+export const { addTweet, removeTweet, getAllTweets, addLike, removeLike, getAllTrendTweets } = tweetsSlice.actions;
 export default tweetsSlice.reducer;

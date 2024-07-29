@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import Hashtag from '.../components/Hashtag'
+import Hashtag from './../../components/Hashtag'
 import Head from 'next/head';
  
 function HashtagPage() {

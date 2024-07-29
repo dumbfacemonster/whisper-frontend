@@ -5,7 +5,7 @@ import { logout } from '../reducers/user';
 import { addTweet, removeTweet } from '../reducers/tweets';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGhost } from '@fortawesome/free-solid-svg-icons';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import LastTweets from './LastTweets';
@@ -64,10 +64,10 @@ function Home() {
     <div className={styles.homePage}>
       <div className={styles.leftContainer}>
         <Link href='/'>
-          <FontAwesomeIcon icon={faTwitter} className={styles.icon} />
+          <FontAwesomeIcon icon={faGhost} className={styles.icon} />
         </Link>
         <div className={styles.userSection}>
-          <img src='profile-pic.png' alt="Photo de profil" className={styles.profilePic} />
+          <img src='profile-pic.png' alt="Profile picture" className={styles.profilePic} />
           <div className={styles.userInfo}>
             <p className={styles.firstname}>
               {user.firstname}
@@ -91,7 +91,7 @@ function Home() {
                 <p className={styles.errorMessage}>Can't whisp in these conditions !</p>
               ) : null}
               <p className={styles.counter}>{newTweet.length}/280</p>
-              <button onClick={() => handleTweet()} className={styles.newTweet}>Tweet</button>
+              <button onClick={() => handleTweet()} className={styles.newTweet}>Whisp</button>
             </div>
           </div>
         </div>
@@ -101,9 +101,7 @@ function Home() {
       </div>
       <div className={styles.rightContainer}>
         <h3 className={styles.title}>Trends</h3>
-        <div className={styles.allTrendsBox}>
           <Trends />
-        </div>
       </div>
       <ScrollToTop smooth={true} color="#ffffff" className={styles.ScrollToTop} />
     </div>

@@ -23,7 +23,7 @@ useEffect(() => {
     .then(resp => resp.json())
     .then(data => {
         if(data.result){
-        console.log(data)
+       // console.log(data)
         setTrendsData(data.trends)
         }
         else {
@@ -36,17 +36,15 @@ useEffect(() => {
 
 const formattedTrends = trendsData.map((data, i) => {
     return (
-            <Link key={i} href={`/hashtag/${data.tag.slice(1)}`}>
+            <Link key={i} href={`/hashtag/${data.tag}`}>
               <div className={styles.tweetContainer}>
-                <h3 className={styles.hashtag}>{data.tag}</h3>
+                <h3 className={styles.hashtag}>#{data.tag}</h3>
                 <h4 className={styles.nbrTweet}>{data.nb} Tweet{data.nb > 1 && 's'}</h4>
               </div>
             </Link>
       
           );
 });
-    
-console.log(formattedTrends)
 
   /*const formattedTrends = trendsData.map((data, i) => {
         return (

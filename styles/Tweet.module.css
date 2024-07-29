@@ -1,6 +1,23 @@
+@font-face {
+    font-family: 'Mont-Heavy';
+    src: url('../fonts/mont-heavy.ttf') format('truetype');
+
+    font-family: 'Mont-Semi-Bold';
+    src: url('../fonts/mont-semi-bold.ttf') format('truetype');
+
+    font-family: 'Mont-Book';
+    src: url('../fonts/mont-book.ttf') format('truetype');
+  }
+
 .tweetContainer {
-    border-top: 1px solid #59626F;
+   /*  border-top: 1px solid #C1A49A; */
+    width: 41vw;
+    min-height: 20vh;
+    border-radius: 10px;
+    background-color: #1B2D2A;
     padding: 2vh 2vw;
+    margin: 2vh 2vw;
+    overflow: hidden;
 }
 
 .authorInfos {
@@ -18,37 +35,43 @@
 
 .authorName {
     font-family: 'Mont-Heavy';
-    color: white;
+    color: #E0D1CC;
     margin-left: 1vw;
 }
 
 .username {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #59626F;
+    color: #C1A49A;
     font-size: 14px;
 }
 
 .point {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #59626F;
+    color: #C1A49A;
     font-size: 14px;
 }
 
 .date {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #59626F;
+    color: #C1A49A;
     font-size: 14px;
 }
 
 .content {
     padding: 1vh 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
+    color: #E0D1CC;
     font-size: 16px;
 }
 
 .likes {
-    color: white;
+    color: #E0D1CC;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-right: 1vw;
+}
+
+.linkText {
+    font-family: 'Mont-Heavy';
+    color: #C1A49A;
+    cursor: pointer;
 }

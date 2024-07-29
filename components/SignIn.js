@@ -4,8 +4,7 @@ import { useDispatch } from 'react-redux';
 import { login } from '../reducers/user';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faXmark, faGhost } from '@fortawesome/free-solid-svg-icons';
 
 function SignIn(props) {
 
@@ -43,9 +42,9 @@ const handleClick = () => {
         <div className={styles.modal}>
             <div className={styles.modalBox}>
         <FontAwesomeIcon type="button" onClick={props.onClose} icon={faXmark} className={styles.closeIcon} />
-        <FontAwesomeIcon icon={faTwitter} className={styles.icon} />
+        <FontAwesomeIcon icon={faGhost} className={styles.icon} />
         <h4 className={styles.modalTitle}>
-            Connect to Twitter
+            Connect to Whisper
         </h4>
         <input type="text" placeholder='Username' onChange={(e) => setUsername(e.target.value)} value={username} />
         <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} value={password} />
